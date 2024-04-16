@@ -1,0 +1,118 @@
+<!-- workoutTracker.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* Additional custom styles */
+    .gradient-alert {
+      background: linear-gradient(to right, #ff0844, #ffb199);
+      color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .navbar {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      /* width: 100%; */
+      background-color: #fff;
+    }
+
+    .navbar-item {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: gray;
+      padding: 1rem 0;
+    }
+
+    .navbar-item:hover,
+    .navbar-item.active {
+      color: blue;
+    }
+
+    .navbar-item i {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+
+    .navbar-item.search {
+        background-image: linear-gradient(to right, #4e54c8, #8f94fb);
+        width: 50px;
+        height: 60px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        transform: translateY(-50%);
+      }
+
+      .navbar-item.search{
+        color: white;
+      }
+    </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Main content of the page -->
+  <div class="container mx-auto py-8 max-w-sm h-screen p-8 rounded shadow-lg">
+    <!-- Analytics Section -->
+      <!-- Workout Schedule Heading -->
+      <h2 class="text-lg font-semibold mb-4 text-center">Workout Schedule</h2>
+
+      <!-- Date Selection -->
+      <div class="flex items-center justify-center mb-4">
+        <!-- Left Arrow -->
+        <button class="mr-4">&lt;</button>
+        <!-- Month and Year -->
+        <span class="font-semibold">April 2024</span>
+        <!-- Right Arrow -->
+        <button class="ml-4">&gt;</button>
+      </div>
+
+      <!-- Dates -->
+      <div class="hidden md:block mb-4">
+        <!-- Display 5 dates -->
+        <div>April 1</div>
+        <div>April 2</div>
+        <div>April 3</div>
+        <div>April 4</div>
+        <div>April 5</div>
+        <!-- Add more dates here -->
+      </div>
+
+      <!-- Time Slots -->
+      <div class="hidden md:block mb-4">
+        <!-- Time slots with 1-hour difference -->
+        <div>9:00 AM</div>
+        <div>10:00 AM</div>
+        <div>11:00 AM</div>
+        <div>12:00 PM</div>
+        <div>1:00 PM</div>
+        <!-- Add more time slots here -->
+      </div>
+
+      <!-- Plus Icon for Adding Event -->
+      <button class="bg-blue-500 text-white py-2 px-4 rounded-full float-right">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+        </svg>
+      </button>
+
+      <nav class="navbar w-full absolute bottom-0 text-center">
+        <div class="flex">
+          <a href="./workoutTracker.html" class="navbar-item"><i class="fa-solid fa-house"></i></a>
+          <a href="./workoutSchedule.html" class="navbar-item active"><i class="fas fa-chart-bar"></i></a>
+          <a href="#" class="navbar-item search"><i class="fas fa-search"></i></a>
+          <a href="#" class="navbar-item"><i class="fas fa-camera"></i></a>
+          <a href="./profile.html" class="navbar-item"><i class="fas fa-user"></i></a>
+        </div>
+      </nav>
+  </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create an Account</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+      <div class="max-w-sm h-screen mx-auto bg-white p-8 rounded shadow-md">
+        <h1 class="text-2xl font-semibold mb-4">Create an Account</h1>
+        <div class="grid grid-cols-1 gap-4">
+          <input
+            type="text"
+            class="border rounded px-3 py-2"
+            placeholder="First Name"
+            required
+          />
+          <input
+            type="text"
+            class="border rounded px-3 py-2"
+            placeholder="Last Name"
+            required
+          />
+          <input
+            type="email"
+            class="border rounded px-3 py-2"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            class="border rounded px-3 py-2"
+            placeholder="Password"
+            required
+          />
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2" required />
+            I agree to the terms and conditions
+          </label>
+        </div>
+        <span class="absolute bottom-0 text-center mb-4 mr-4">
+          <button id="createAccountBtn" class="bg-blue-500 w-full text-white px-4 py-2 rounded-lg mt-4">Create an Account</button>
+          <div class="mt-4 flex items-center">
+            <hr class="flex-grow border-t-2 border-gray-400">
+            <span class="mx-4 text-gray-600">or</span>
+            <hr class="flex-grow border-t-2 border-gray-400">
+          </div>
+          <div class="flex justify-center mt-4">
+            <button class="bg-red-500 text-white px-4 py-2 rounded mr-2">Google</button>
+            <button class="bg-blue-800 text-white px-4 py-2 rounded">Facebook</button>
+          </div>
+          <p class="mt-4 text-center">Already have an account? Click here to <a href="../pages/login.html" class="text-blue-500">Login</a></p>
+        </span>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("createAccountBtn")
+        .addEventListener("click", function () {
+          const firstName = document.querySelector(
+            'input[placeholder="First Name"]'
+          ).value;
+          const lastName = document.querySelector(
+            'input[placeholder="Last Name"]'
+          ).value;
+          const email = document.querySelector(
+            'input[placeholder="Email"]'
+          ).value;
+          const password = document.querySelector(
+            'input[placeholder="Password"]'
+          ).value;
+          const agreeCheckbox = document.querySelector(
+            'input[type="checkbox"]'
+          );
+
+          if (
+            !firstName ||
+            !lastName ||
+            !email ||
+            !password ||
+            !agreeCheckbox.checked
+          ) {
+            alert(
+              "Please fill in all fields and agree to the terms and conditions."
+            );
+            return;
+          }
+
+          // Store data in localStorage
+          localStorage.setItem("firstName", firstName);
+          localStorage.setItem("lastName", lastName);
+          localStorage.setItem("email", email);
+          localStorage.setItem("password", password);
+
+          // Redirect to goals.html
+          window.location.href = "../pages/goals.html";
+        });
+    </script>
+  </body>
+</html>
