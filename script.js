@@ -39,5 +39,5 @@ function loadPage(pageName) {
   }
   
   // Load initial page
-  loadPage('./pages/skip1');
+  loadPage('skip1');
   
