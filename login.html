@@ -1,73 +1,104 @@
 <!-- login.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-</head>
-<body>
-  <div class="container mx-auto py-8">
-    <div class="max-w-sm h-screen mx-auto bg-white p-8 rounded">
-      <h1 class="text-2xl font-semibold mb-4">Welcome Back</h1>
-      <div class="grid grid-cols-1 gap-4">
-        <input type="email" class="border rounded px-3 py-2" placeholder="Email" value="" id="email" required>
-        <input type="password" class="border rounded px-3 py-2" placeholder="Password" value="" id="password" required>
-        <p class="text-blue-500 underline cursor-pointer">Forgot your password</p>
+  </head>
+  <body>
+    <div class="container mx-auto py-8">
+      <div class="max-w-sm h-screen mx-auto bg-white p-8 rounded">
+        <h1 class="text-2xl font-semibold mb-4">Welcome Back</h1>
+        <div class="grid grid-cols-1 gap-4">
+          <input
+            type="email"
+            class="border rounded px-3 py-2"
+            placeholder="Email"
+            value=""
+            id="email"
+            required
+          />
+          <input
+            type="password"
+            class="border rounded px-3 py-2"
+            placeholder="Password"
+            value=""
+            id="password"
+            required
+          />
+          <p class="text-blue-500 underline cursor-pointer">
+            Forgot your password
+          </p>
+        </div>
+        <span class="absolute bottom-0 text-center mb-4 mr-4">
+          <button
+            id="loginBtn"
+            class="bg-gradient-to-l from-blue-500 to-blue-300 text-white px-4 py-2 rounded-lg w-full mt-4"
+          >
+            Login
+          </button>
+          <div class="mt-4 flex items-center">
+            <hr class="flex-grow border-t-2 border-gray-400" />
+            <span class="mx-4 text-gray-600">or</span>
+            <hr class="flex-grow border-t-2 border-gray-400" />
+          </div>
+          <div class="flex justify-center mt-4">
+            <button class="bg-red-500 text-white px-4 py-2 rounded mr-2">
+              <i class="fa-brands fa-google"></i>
+            </button>
+            <button class="bg-blue-800 text-white px-4 py-2 rounded">
+              <i class="fa-brands fa-facebook-f"></i>
+            </button>
+          </div>
+          <p class="mt-4 text-center">
+            Don't have an account yet?
+            <a href="createAccount.html" class="text-blue-500"
+              >Create an account</a
+            >
+          </p>
+        </span>
       </div>
-      <span class="absolute bottom-0 text-center mb-4 mr-4">
-      <button id="loginBtn" class="bg-gradient-to-l from-blue-500 to-blue-300 text-white px-4 py-2 rounded-lg w-full mt-4">Login</button>
-      <div class="mt-4 flex items-center">
-        <hr class="flex-grow border-t-2 border-gray-400">
-        <span class="mx-4 text-gray-600">or</span>
-        <hr class="flex-grow border-t-2 border-gray-400">
-      </div>
-      <div class="flex justify-center mt-4">
-        <button class="bg-red-500 text-white px-4 py-2 rounded mr-2"><i class="fa-brands fa-google"></i></button>
-            <button class="bg-blue-800 text-white px-4 py-2 rounded"><i class="fa-brands fa-facebook-f"></i></button>
-      </div>
-      <p class="mt-4 text-center">Don't have an account yet? <a href="createAccount.html" class="text-blue-500">Create an account</a></p>
-    </span>
     </div>
-  </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Retrieve email and password from localStorage
-      const email = localStorage.getItem('email');
-      const password = localStorage.getItem('password');
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Retrieve email and password from localStorage
+        const email = localStorage.getItem("email");
+        const password = localStorage.getItem("password");
 
-      // Fill input fields with retrieved values
-      document.getElementById('email').value = email || '';
-      document.getElementById('password').value = password || '';
+        // Fill input fields with retrieved values
+        document.getElementById("email").value = email || "";
+        document.getElementById("password").value = password || "";
 
-      // Login button click event
-      document.getElementById('loginBtn').addEventListener('click', function() {
-        const enteredEmail = document.getElementById('email').value;
-        const enteredPassword = document.getElementById('password').value;
+        // Login button click event
+        document
+          .getElementById("loginBtn")
+          .addEventListener("click", function () {
+            const enteredEmail = document.getElementById("email").value;
+            const enteredPassword = document.getElementById("password").value;
 
-        // Retrieve email and password from localStorage for comparison
-        const storedEmail = localStorage.getItem('email');
-        const storedPassword = localStorage.getItem('password');
-
-        // Check if entered email and password match stored values
-        if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
-          // Redirect to goals.html if credentials match
-          window.location.href = 'goals.html';
-        } else {
-          // Show error message if credentials don't match
-          alert('Incorrect email or password. Please try again.');
-        }
+            // Check if entered email and password match stored values
+            if (enteredEmail === email && enteredPassword === password) {
+              // Redirect to goals.html if credentials match
+              window.location.href = "goals.html";
+            } else {
+              // Show error message if credentials don't match
+              alert("Incorrect email or password. Please try again.");
+            }
+          });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
