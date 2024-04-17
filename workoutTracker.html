@@ -21,8 +21,8 @@
     <style>
       /* Additional custom styles */
       .gradient-alert {
-        background: linear-gradient(to right, #ff0844, #ffb199);
-        color: white;
+        background: linear-gradient(to right, rgba(129, 157, 255, 0.28), rgba(16, 16, 16, 0));
+        color: black;
         padding: 1rem;
         border-radius: 0.5rem;
       }
@@ -30,9 +30,9 @@
       .navbar {
         position: relative;
         bottom: 0;
-        left: 0;
-        /* width: 100%; */
-        background-color: #fff;
+        left: auto;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 1) !important;
       }
 
       .navbar-item {
@@ -46,7 +46,7 @@
 
       .navbar-item:hover,
       .navbar-item.active {
-        color: blue;
+        color: rgba(130, 157, 255, 1);
       }
 
       .navbar-item i {
@@ -78,7 +78,7 @@
       }
 
       .navbar-item.search {
-        background-image: linear-gradient(to right, #4e54c8, #8f94fb);
+        background-image: linear-gradient(to right, rgba(222, 229, 255, 1), rgba(128, 154, 255, 1));
         width: 50px;
         height: 60px;
         border-radius: 50%;
@@ -91,8 +91,8 @@
       }
     </style>
   </head>
-  <body class="bg-gray-100 p-3">
-    <div class="max-w-sm h-full mx-auto p-8 rounded shadow-lg">
+  <body class="p-3">
+    <div class="max-w-sm h-full mx-auto rounded">
     <!-- Main content of the page -->
     <div class="container mx-auto py-8">
       <h1 class="text-2xl font-semibold text-center mb-4">Workout Tracker</h1>
@@ -100,13 +100,14 @@
       <!-- Graph -->
       <!-- Graph goes here -->
       <!-- Replace the following with your graph component -->
-      <div class="border border-gray-300 h-64">
+      <div>
         <!-- Your graph content goes here -->
-        <canvas id="caloriesChart" class="w-screen h-screen"></canvas>
+        <a href="./workoutSchedule.html"><canvas id="caloriesChart" class="h-64 w-80"></canvas></a>
       </div>
 
       <!-- Alert -->
-      <div class="gradient-alert mb-4">
+      <div class="gradient-alert mb-4 flex gap-4 mt-4">
+        <img src="./Assets/alert.svg" alt="">
         <p>You've burned fewer calories than yesterday. Time to get moving!</p>
       </div>
 
@@ -173,7 +174,7 @@
         <h2 class="text-lg font-semibold mb-4">What do you want to train?</h2>
         <!-- Full body workout card -->
         <div
-          class="bg-blue-400 text-white p-4 rounded shadow-md flex items-center"
+          class="bg-blue-400 bg-opacity-60 text-white p-4 rounded shadow-md flex items-center"
         >
           <!-- Left side content -->
           <div class="text-black">
@@ -192,7 +193,7 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar w-full">
+    <nav class="navbar">
       <div class="flex">
         <a href="./workoutTracker.html" class="navbar-item active"
           ><i class="fa-solid fa-house"></i
