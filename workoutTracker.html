@@ -21,7 +21,11 @@
     <style>
       /* Additional custom styles */
       .gradient-alert {
-        background: linear-gradient(to right, rgba(129, 157, 255, 0.28), rgba(16, 16, 16, 0));
+        background: linear-gradient(
+          to right,
+          rgba(129, 157, 255, 0.28),
+          rgba(16, 16, 16, 0)
+        );
         color: black;
         padding: 1rem;
         border-radius: 0.5rem;
@@ -78,7 +82,11 @@
       }
 
       .navbar-item.search {
-        background-image: linear-gradient(to right, rgba(222, 229, 255, 1), rgba(128, 154, 255, 1));
+        background-image: linear-gradient(
+          to right,
+          rgba(222, 229, 255, 1),
+          rgba(128, 154, 255, 1)
+        );
         width: 50px;
         height: 60px;
         border-radius: 50%;
@@ -86,127 +94,135 @@
         transform: translateY(-50%);
       }
 
-      .navbar-item.search{
+      .navbar-item.search {
         color: white;
       }
     </style>
   </head>
   <body class="p-3">
     <div class="max-w-sm h-full mx-auto rounded">
-    <!-- Main content of the page -->
-    <div class="container mx-auto py-8">
-      <h1 class="text-2xl font-semibold text-center mb-4">Workout Tracker</h1>
+      <!-- Main content of the page -->
+      <div class="container mx-auto py-8">
+        <h1 class="text-2xl font-semibold text-center mb-4">Workout Tracker</h1>
 
-      <!-- Graph -->
-      <!-- Graph goes here -->
-      <!-- Replace the following with your graph component -->
-      <div>
-        <!-- Your graph content goes here -->
-        <a href="./workoutSchedule.html"><canvas id="caloriesChart" class="h-64 w-80"></canvas></a>
-      </div>
-
-      <!-- Alert -->
-      <div class="gradient-alert mb-4 flex gap-4 mt-4">
-        <img src="./Assets/alert.svg" alt="">
-        <p>You've burned fewer calories than yesterday. Time to get moving!</p>
-      </div>
-
-      <!-- Upcoming workout -->
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-lg font-semibold">Upcoming Workout</h2>
-        <a href="#" class="text-blue-500">See more</a>
-      </div>
-
-      <!-- Cards -->
-      <div class="gap-4">
-        <!-- Card 1 -->
-        <div class="bg-white mb-7 p-4 rounded shadow-md flex items-center">
-          <!-- Image -->
-          <img
-            src="./Assets/Workout1.svg"
-            alt="Workout Image"
-            class="w-16 h-16 rounded-full mr-4"
-          />
-
-          <!-- Content -->
-          <div>
-            <h3 class="text-md font-semibold">Full Body Workout</h3>
-            <p class="text-sm text-gray-600">Today 3pm</p>
-          </div>
-
-          <!-- Toggle button -->
-          <label class="ml-auto w-10 h-5 flex items-center justify-center">
-            <input type="checkbox" id="check1" />
-            <label
-              for="check1"
-              class="button bg-blue-500 w-6 h-3 rounded-full w-10 h-5 cursor-pointer relative"
-            ></label>
-          </label>
+        <!-- Graph -->
+        <!-- Graph goes here -->
+        <!-- Replace the following with your graph component -->
+        <div>
+          <!-- Your graph content goes here -->
+          <a href="./workoutSchedule.html"
+            ><canvas id="caloriesChart" class="h-64 w-80"></canvas
+          ></a>
         </div>
 
-        <!-- Card 2 -->
-        <div class="bg-white p-4 rounded shadow-md flex items-center">
-          <!-- Image -->
-          <img
-            src="./Assets/Workout2.svg"
-            alt="Workout Image"
-            class="w-16 h-16 rounded-full mr-4"
-          />
+        <!-- Alert -->
+        <div class="gradient-alert mb-4 flex gap-4 mt-4">
+          <img src="./Assets/alert.svg" alt="" />
+          <p>
+            You've burned fewer calories than yesterday. Time to get moving!
+          </p>
+        </div>
 
-          <!-- Content -->
-          <div>
-            <h3 class="text-md font-semibold">Upper Body Workout</h3>
-            <p class="text-sm text-gray-600">4 Feb, 3:30 pm</p>
+        <!-- Upcoming workout -->
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-lg font-semibold">Upcoming Workout</h2>
+          <a href="#" class="text-blue-500">See more</a>
+        </div>
+
+        <!-- Cards -->
+        <div class="gap-4">
+          <!-- Card 1 -->
+          <div class="bg-white mb-7 p-4 rounded shadow-md flex items-center">
+            <!-- Image -->
+            <img
+              src="./Assets/Workout1.svg"
+              alt="Workout Image"
+              class="w-16 h-16 rounded-full mr-4"
+            />
+
+            <!-- Content -->
+            <div>
+              <h3 class="text-md font-semibold">Full Body Workout</h3>
+              <p class="text-sm text-gray-600">Today 3pm</p>
+            </div>
+
+            <!-- Toggle button -->
+            <label class="ml-auto w-10 h-5 flex items-center justify-center">
+              <input type="checkbox" id="check1" />
+              <label
+                for="check1"
+                class="button bg-blue-500 w-6 h-3 rounded-full w-10 h-5 cursor-pointer relative"
+              ></label>
+            </label>
           </div>
 
-          <!-- Toggle button -->
-          <label class="ml-auto w-10 h-5 flex items-center justify-center">
-            <input type="checkbox" id="check" />
-            <label
-              for="check"
-              class="button bg-blue-500 w-6 h-3 rounded-full w-10 h-5 cursor-pointer relative"
-            ></label>
-          </label>
+          <!-- Card 2 -->
+          <div class="bg-white p-4 rounded shadow-md flex items-center">
+            <!-- Image -->
+            <img
+              src="./Assets/Workout2.svg"
+              alt="Workout Image"
+              class="w-16 h-16 rounded-full mr-4"
+            />
+
+            <!-- Content -->
+            <div>
+              <h3 class="text-md font-semibold">Upper Body Workout</h3>
+              <p class="text-sm text-gray-600">4 Feb, 3:30 pm</p>
+            </div>
+
+            <!-- Toggle button -->
+            <label class="ml-auto w-10 h-5 flex items-center justify-center">
+              <input type="checkbox" id="check" />
+              <label
+                for="check"
+                class="button bg-blue-500 w-6 h-3 rounded-full w-10 h-5 cursor-pointer relative"
+              ></label>
+            </label>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <h2 class="text-lg font-semibold mb-4">What do you want to train?</h2>
+          <!-- Full body workout card -->
+          <div
+            class="bg-blue-400 bg-opacity-60 text-white p-4 rounded shadow-md flex items-center"
+          >
+            <!-- Left side content -->
+            <div class="text-black">
+              <h3 class="text-lg">Full body workout</h3>
+              <p class="text-sm">Arms</p>
+              <p class="text-sm">Chest</p>
+            </div>
+            <!-- Right side image -->
+            <img
+              src="./Assets/Workout3.svg"
+              alt="Full Body Workout Image"
+              class="w-16 h-16 rounded-full ml-auto"
+            />
+          </div>
         </div>
       </div>
 
-      <div class="mt-8">
-        <h2 class="text-lg font-semibold mb-4">What do you want to train?</h2>
-        <!-- Full body workout card -->
-        <div
-          class="bg-blue-400 bg-opacity-60 text-white p-4 rounded shadow-md flex items-center"
-        >
-          <!-- Left side content -->
-          <div class="text-black">
-            <h3 class="text-lg">Full body workout</h3>
-            <p class="text-sm">Arms</p>
-            <p class="text-sm">Chest</p>
-          </div>
-          <!-- Right side image -->
-          <img
-            src="./Assets/Workout3.svg"
-            alt="Full Body Workout Image"
-            class="w-16 h-16 rounded-full ml-auto"
-          />
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="flex">
+          <a href="./workoutTracker.html" class="navbar-item active"
+            ><i class="fa-solid fa-house"></i
+          ></a>
+          <a href="./workoutSchedule.html" class="navbar-item"
+            ><i class="fas fa-chart-bar"></i
+          ></a>
+          <a href="#" class="navbar-item search"
+            ><i class="fas fa-search"></i
+          ></a>
+          <a href="#" class="navbar-item"><i class="fas fa-camera"></i></a>
+          <a href="./profile.html" class="navbar-item"
+            ><i class="fas fa-user"></i
+          ></a>
         </div>
-      </div>
+      </nav>
     </div>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="flex">
-        <a href="./workoutTracker.html" class="navbar-item active"
-          ><i class="fa-solid fa-house"></i
-        ></a>
-        <a href="./workoutSchedule.html" class="navbar-item"
-          ><i class="fas fa-chart-bar"></i
-        ></a>
-        <a href="#" class="navbar-item search"><i class="fas fa-search"></i></a>
-        <a href="#" class="navbar-item"><i class="fas fa-camera"></i></a>
-        <a href="./profile.html" class="navbar-item"><i class="fas fa-user"></i></a>
-      </div>
-    </nav>
-  </div>
 
     <!-- Font Awesome CDN for icons -->
     <script>

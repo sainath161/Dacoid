@@ -1,51 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <style>
-    /* Additional custom styles */
-    .gradient-alert {
-      background: linear-gradient(to right, #ff0844, #ffb199);
-      color: white;
-      padding: 1rem;
-      border-radius: 0.5rem;
-    }
+    <style>
+      /* Additional custom styles */
+      .gradient-alert {
+        background: linear-gradient(to right, #ff0844, #ffb199);
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
 
-    .navbar {
-      /* margin: auto; */
-      /* position: absolute; */
-      margin-top: 62vh;
-      bottom: 0;
-      left: auto;
-      background-color: #fff;
-    }
+      .navbar {
+        /* margin: auto; */
+        /* position: absolute; */
+        margin-top: 62vh;
+        bottom: 0;
+        left: auto;
+        background-color: #fff;
+      }
 
-    .navbar-item {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: gray;
-      padding: 1rem 0;
-    }
+      .navbar-item {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: gray;
+        padding: 1rem 0;
+      }
 
-    .navbar-item:hover,
-    .navbar-item.active {
-      color: rgba(130, 157, 255, 1);
-    }
+      .navbar-item:hover,
+      .navbar-item.active {
+        color: rgba(130, 157, 255, 1);
+      }
 
-    .navbar-item i {
-      font-size: 1.5rem;
-      margin-right: 0.5rem;
-    }
+      .navbar-item i {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+      }
 
-    .navbar-item.search {
-        background-image: linear-gradient(to right, rgba(222, 229, 255, 1), rgba(128, 154, 255, 1));
+      .navbar-item.search {
+        background-image: linear-gradient(
+          to right,
+          rgba(222, 229, 255, 1),
+          rgba(128, 154, 255, 1)
+        );
         width: 50px;
         height: 60px;
         border-radius: 50%;
@@ -53,61 +66,77 @@
         transform: translateY(-50%);
       }
 
-      .navbar-item.search{
+      .navbar-item.search {
         color: white;
       }
     </style>
-</head>
-<body>
-  <div class="container mx-auto py-8 max-w-sm h-screen p-1 rounded">
-  <!-- Main content of the page -->
-  <div class="container mx-auto">
-    <!-- Profile heading -->
-    <h1 class="text-2xl font-semibold text-center mb-4">Profile</h1>
+  </head>
+  <body>
+    <div class="container mx-auto py-8 max-w-sm h-screen p-1 rounded">
+      <!-- Main content of the page -->
+      <div class="container mx-auto">
+        <!-- Profile heading -->
+        <h1 class="text-2xl font-semibold text-center mb-4">Profile</h1>
 
-    <!-- User information -->
-    <div class="p-4 rounded mb-4">
-      <h2 class="text-lg font-semibold mb-2">User Information</h2>
-      <!-- Retrieve and display user information from local storage -->
-      <p><strong>Name:</strong> <span id="firstName"></span> <span id="lastName"></span></p>
-      <p><strong>Email:</strong> <span id="email"></span></p>
+        <!-- User information -->
+        <div class="p-4 rounded mb-4">
+          <h2 class="text-lg font-semibold mb-2">User Information</h2>
+          <!-- Retrieve and display user information from local storage -->
+          <p>
+            <strong>Name:</strong> <span id="firstName"></span>
+            <span id="lastName"></span>
+          </p>
+          <p><strong>Email:</strong> <span id="email"></span></p>
+        </div>
+
+        <!-- Logout button -->
+        <button
+          id="logoutBtn"
+          class="bg-red-500 w-full text-white px-4 py-2 rounded-lg mt-4"
+        >
+          Logout
+        </button>
+      </div>
+      <nav class="navbar">
+        <div class="flex">
+          <a href="./workoutTracker.html" class="navbar-item"
+            ><i class="fa-solid fa-house"></i
+          ></a>
+          <a href="./workoutSchedule.html" class="navbar-item"
+            ><i class="fas fa-chart-bar"></i
+          ></a>
+          <a href="#" class="navbar-item search"
+            ><i class="fas fa-search"></i
+          ></a>
+          <a href="#" class="navbar-item"><i class="fas fa-camera"></i></a>
+          <a href="./profile.html" class="navbar-item active"
+            ><i class="fas fa-user"></i
+          ></a>
+        </div>
+      </nav>
     </div>
 
-    <!-- Logout button -->
-    <button id="logoutBtn" class="bg-red-500 w-full text-white px-4 py-2 rounded-lg mt-4">Logout</button>
-  </div>
-  <nav class="navbar">
-    <div class="flex">
-      <a href="./workoutTracker.html" class="navbar-item"><i class="fa-solid fa-house"></i></a>
-      <a href="./workoutSchedule.html" class="navbar-item"><i class="fas fa-chart-bar"></i></a>
-      <a href="#" class="navbar-item search"><i class="fas fa-search"></i></a>
-      <a href="#" class="navbar-item"><i class="fas fa-camera"></i></a>
-      <a href="./profile.html" class="navbar-item active"><i class="fas fa-user"></i></a>
-    </div>
-  </nav>
-</div>
+    <!-- JavaScript to retrieve user information from local storage and handle logout -->
+    <script>
+      // Retrieve user information from local storage
+      const firstName = localStorage.getItem("firstName");
+      const lastName = localStorage.getItem("lastName");
+      const email = localStorage.getItem("email");
 
-  <!-- JavaScript to retrieve user information from local storage and handle logout -->
-  <script>
-    // Retrieve user information from local storage
-    const firstName = localStorage.getItem('firstName');
-    const lastName = localStorage.getItem('lastName');
-    const email = localStorage.getItem('email');
+      // Display user information
+      document.getElementById("firstName").textContent = firstName;
+      document.getElementById("lastName").textContent = lastName;
+      document.getElementById("email").textContent = email;
 
-    // Display user information
-    document.getElementById('firstName').textContent = firstName;
-    document.getElementById('lastName').textContent = lastName;
-    document.getElementById('email').textContent = email;
-
-    // Logout functionality
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      // Clear user information from local storage
-      localStorage.removeItem('firstName');
-      localStorage.removeItem('lastName');
-      localStorage.removeItem('email');
-      // Redirect to create an account page
-      window.location.href = 'createAccount.html';
-    });
-  </script>
-</body>
+      // Logout functionality
+      document.getElementById("logoutBtn").addEventListener("click", () => {
+        // Clear user information from local storage
+        localStorage.removeItem("firstName");
+        localStorage.removeItem("lastName");
+        localStorage.removeItem("email");
+        // Redirect to create an account page
+        window.location.href = "createAccount.html";
+      });
+    </script>
+  </body>
 </html>
